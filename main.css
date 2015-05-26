@@ -48,16 +48,55 @@ table {
 }
 
 
-
-
-
-a{
+/*
+--------------------------------------- B E G I N  N A V ---------------------------------------------------------------
+*/
+a.link, a.logo, a.logo2{
     line-height: 100px;
     font-family: Helvetica, sans-serif;
     color: #FFF57F;
     float: right;
     text-decoration: none;
     font-weight: lighter;
+}
+p.navtext{
+    line-height: 93px;
+    font-family: Helvetica, sans-serif;
+    color: #e1e1e1;
+    font-weight: lighter;
+    text-align: right;
+    font-size: 28pt;
+    letter-spacing: 10px;
+}
+a.link{
+    padding-left: 5px;
+    padding-right: 5px;
+    line-height: 100px;
+    font-variant: small-caps;
+    font-size: 20pt;
+    letter-spacing: 0;
+}
+a.link2{
+    padding-left: 10px;
+    padding-right: 10px;
+    line-height: 90px;
+    font-variant: small-caps;
+    font-size: 30pt;
+    letter-spacing: 0;
+    float: none;
+    font-family: Helvetica, sans-serif;
+    color: #FFF57F;
+    text-decoration: none;
+    font-weight: lighter;
+}
+a.link:hover, a.link2:hover{
+    color: #FFEB00;
+}
+a.link:active, a.link2:active{
+    color: #FFE040;
+}
+a.current{
+    color: #FFEB00;
 }
 .navbar{
     width: 70%;
@@ -66,13 +105,110 @@ a{
     padding-right:15%;
     background-color:#878787;
 }
-.logo{
+a.logo{
     font-size: 38pt;
     float: left;
     color: #7FC3FF;
 
 }
-.logo2{
+a.logo2{
     font-size: 38pt;
     float: left;
 }
+/*
+--------------------------------------- E N D  N A V ---------------------------------------------------------------
+*/
+/*
+--------------------------------------- B E G I N  A C T I V I T Y -----------------------------------------------------
+*/
+div.activity{
+    height:110px;
+    padding-left: 15%;
+    padding-right:15%;
+    padding-top: 30px;
+
+}
+
+/*
+--------------------------------------- B E G I N  C R E A T E  P O S T ------------------------------------------------
+*/
+div.post{
+    margin-top: 25px;
+    margin-left: 110px;
+    background-color: #E1E1E1;
+    padding: 8px;
+    height: 230px;
+    border-radius: 3px;
+}
+.areacontainer{
+    height:150px;
+    min-height: 50px;
+    margin-right: 13px;
+}
+textarea.postarea{
+    height: 125px;
+    padding:5px;
+    resize: none;
+    width: 100%;
+    border: 1px solid #FFFFFF;
+    border-radius: 5px;
+}
+input.postbutton{
+    float: right;
+    width: 100px;
+    height: 35px;
+    background-color: #7FC3FF;
+    font-size: 10pt;
+    color: #FFFFFF;
+    border:1px solid #7FC3FF;
+    border-radius: 5px;
+}
+input.postbutton:hover{
+    background-color:#0087FF;
+}
+input.postbutton:active{
+    background-color: #40A5FF;
+}
+h3.nameheader{
+    font-family: Helvetica, sans-serif;
+    font-size: 30pt;
+    font-weight: lighter;
+    color: #0087FF;
+}
+img.profileimg{
+    float: left;
+    margin-top: 25px;
+    margin-right: 3px;
+    border-radius: 110px;
+}
+/*
+--------------------------------------- E N D  C R E A T E  P O S T ----------------------------------------------------
+*/
+/*
+--------------------------------------- B E G I N  P O S T -------------------------------------------------------------
+*/
+.replytext{
+    color: #7FC3FF;
+    font-family: Helvetica, sans-serif;
+    font-size: 13pt;
+    float: right;
+    margin-right: 15px;
+    margin-top: 10px;
+    text-decoration: none;
+}
+.replytext:hover{
+    color: #0087FF;
+}
+.replytext:active{
+    color: #40A5FF;
+
+}
+/*
+--------------------------------------- E N D  P O S T -----------------------------------------------------------------
+*/
+/*
+--------------------------------------- E N D  A C T I V I T Y ---------------------------------------------------------
+
+
+
+*/
