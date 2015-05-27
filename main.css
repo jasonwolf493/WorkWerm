@@ -169,7 +169,7 @@ input.postbutton:hover{
 input.postbutton:active{
     background-color: #40A5FF;
 }
-h3.nameheader{
+h3.header{
     font-family: Helvetica, sans-serif;
     font-size: 30pt;
     font-weight: lighter;
@@ -212,3 +212,97 @@ img.profileimg{
 
 
 */
+a.link3{
+    font-family: Helvetica, sans-serif;
+    font-size: 14pt;
+    color: #7FC3FF;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+a.link3:hover{
+    color: #0087ff;
+}
+a.link3:active{
+    color: #40A5FF;
+}
+
+.floatright{
+    float: right;
+}
+.floatleft{
+    float: left;
+}
+.third{
+    width: 30%;
+    background-color: white;
+    margin: 15px;
+    margin-top: 40px;
+    min-height: 186px;
+    overflow: hidden;
+}
+p.normaltext{
+    font-family: Helvetica, sans-serif;
+    font-size: 14pt;
+    font-weight: lighter;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+input.login{
+    color: #c5c5c5;
+    font-size: 14pt;
+    font-weight: lighter;
+    width: 348px;
+    height: 25px;
+    padding: 5px;
+    margin: 5px;
+    border: 0;
+    background-color: #F5F5F5;
+}
+
+input.loginbutton{
+    color: white;
+    font-size: 14pt;
+    font-weight: lighter;
+    width: 100%;
+    max-width: 358px;
+    height: 35px;
+    padding: 5px;
+    margin-left: 5px;
+    margin-top: 5px;
+    border: 0;
+    background-color: #7FC3FF;
+}
+input.loginbutton:hover{
+    background-color: #0087ff;
+}
+input.loginbutton:active{
+    background-color: #40A5FF;
+}
+.screenshot{
+    border: 1px solid black;
+    margin-top: 15px;
+}
+.screenshot2{
+    border: 1px solid black;
+    margin-top: 55px;
+}
+
+
+
+
+::-webkit-input-placeholder {
+    color: #c5c5c5;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+    color: #c5c5c5;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+    color: #c5c5c5;
+}
+
+:-ms-input-placeholder {
+    color: #c5c5c5;
+}
