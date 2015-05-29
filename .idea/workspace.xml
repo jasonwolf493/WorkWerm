@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="70747e55-d3f5-4b51-a002-0f6711357ba6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-    </list>
+    <list default="true" id="70747e55-d3f5-4b51-a002-0f6711357ba6" name="Default" comment="" />
     <ignored path="WorkWerm.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -28,7 +26,7 @@
       <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="0" selection-start="415" selection-end="415" vertical-scroll-proportion="0.2601156" vertical-offset="0" max-vertical-offset="915">
+            <state line="35" column="55" selection-start="1490" selection-end="1490" vertical-scroll-proportion="0.6069364" vertical-offset="0" max-vertical-offset="915">
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#p#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -547,7 +545,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="0" selection-start="415" selection-end="415" vertical-scroll-proportion="0.2601156" vertical-offset="0" max-vertical-offset="915">
+        <state line="35" column="55" selection-start="1490" selection-end="1490" vertical-scroll-proportion="0.6069364" vertical-offset="0" max-vertical-offset="915">
           <folding>
             <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
