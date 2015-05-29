@@ -169,7 +169,7 @@ input.postbutton:hover{
 input.postbutton:active{
     background-color: #40A5FF;
 }
-h3.header{
+h3.header, h3{
     font-family: Helvetica, sans-serif;
     font-size: 30pt;
     font-weight: lighter;
