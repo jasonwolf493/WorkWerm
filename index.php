@@ -17,8 +17,17 @@
 <div class="activity">
     <div style="height: 242px" class="floatleft third">
         <h3 class="header">Returning User</h3>
+
         <form action="connect.php" method="post" id="formID">
         <br>
+            <?php
+            if(isset($_GET['error'])){
+                $error = $_GET['error'];
+                if($error=="true"){
+                    echo "Invalid login credentials";
+                }
+            }
+            ?>
         <input class="login" placeholder="Username:" name="username" type="text" required="true">
         <br>
         <input class="login" placeholder="Password" name="password" type="password" >
