@@ -17,7 +17,11 @@
 <div class="activity">
     <div style="height: 242px" class="floatleft third">
         <h3 class="header">Returning User</h3>
+<?php
+$text =sha1("sometext");
+echo $text;
 
+?>
         <form action="connect.php" method="post" id="formID">
         <br>
             <?php
@@ -26,20 +30,22 @@
                 if($error=="true"){
                     echo "Invalid login credentials";
                 }
+                if($error=="veri"){
+                    echo "Account has not been validated, check email.";
+                }
+                if($error=="code"){
+                    echo "Incorrect code";
+                }
             }
             ?>
         <input class="login" placeholder="Username:" name="username" type="text" required="true">
         <br>
-        <input class="login" placeholder="Password" name="password" type="password" >
+        <input class="login" placeholder="Password" name="password" type="password" required="true">
         <br>
         <input class="loginbutton" type="submit" name="submit" value="Submit">
         <br>
         <p style="margin-top: 3px; margin-bottom:0;" class="lighttext floatleft"><a style="margin-left: 5px;" class="link4" href="register.html"> Forgot Username/Password</a> | <a class="link4" href="register.html">Sign Up</a></p>
         </form></div>
-    <form action="connect.php" method="post">
-        <input type="submit" value="Run me now!">
-    </form>
-
     <div style="height: 242px" class="floatleft third">
         <h3 class="header">New User</h3>
         <p class="normaltext">If you are a new user and do not have an account yet you can follow the link below to the sign up page. The sign up is quick and simple, we promise.</p>
@@ -74,6 +80,7 @@ form.addEventListener('submit', function(event) { // listen for form submitting
         event.preventDefault(); // dismiss the default functionality
         alert('Please, fill the form'); // error message
     }
-}, false);</script>
+}, false);
+</script>
 </body>
 </html>

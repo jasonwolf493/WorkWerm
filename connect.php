@@ -17,7 +17,7 @@
 
 //get login info
     $loginusername = $_POST['username'];
-    $loginpassword = $_POST['password'];
+    $loginpassword = sha1($_POST['password']);
 //echo "$loginusername";
 //echo "$loginpassword";
 
@@ -40,8 +40,14 @@
             //echo " id: " . $row["id"] . " - Name: " . $row["fname"] . " " . $row["lname"] . " " . $row["username"] . "<br>";
             $_SESSION["firstname"] = $row["fname"];
             $_SESSION["lastname"] = $row["lname"];
+            $_SESSION["verified"] = $row["verified"];
         }
-        header('Location: activity.php');
+        if($_SESSION["verified"]==1){
+            header('Location: activity.php');
+        }else{
+            header('Location: index.php?error=veri');
+        }
+
     } else {
 
         header('Location: index.php?error=true');

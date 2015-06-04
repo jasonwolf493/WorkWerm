@@ -17,6 +17,26 @@
     <div class="floatleft full">
         <h3 class="header">Register</h3>
         <form action="createuser.php" method="post" id="formID">
+            <?php
+            if(isset($_GET['error'])){
+                //echo $_GET['error'];
+                if (strpos($_GET['error'], 'exists') !== false) {
+                    echo ' Email/username already exists. ';
+                }
+                //echo $_GET['error'];
+                if (strpos($_GET['error'], 'code') !== false) {
+                    echo ' Incorrect code was received. ';
+                }
+                //echo $_GET['error'];
+                if (strpos($_GET['error'], 'email') !== false) {
+                    echo ' Emails do not match. ';
+                }
+                //echo $_GET['error'];
+                if (strpos($_GET['error'], 'password') !== false) {
+                    echo ' Passwords do not match. ';
+                }
+            };
+            ?>
             <br>
             <input class="login floatleft username" placeholder="Username:" name="username" type="text" required="true">
             <br>
@@ -28,12 +48,13 @@
             <br>
             <input class="login floatright" placeholder="Confirm Email:" name="confirmemail" type="email" required="true">
             <br>
+
             <input class="login floatleft" placeholder="First Name:" name="firstname" type="text" required="true">
             <br>
             <input class="login floatright" placeholder="Last Name:" name="lastname" type="text" required="true">
             <br>
-        <input style="margin-left: 5px" class="floatleft" type="checkbox"><p style="margin-top: 3px; margin-bottom:0;" class="lighttext floatleft" required="true">I have read and agree to the <a class="link4" href="termsofservice">Terms of Service</a></p>
-        <br>
+            <input style="margin-left: 5px" class="floatleft" type="checkbox"><p style="margin-top: 3px; margin-bottom:0;" class="lighttext floatleft" required="true">I have read and agree to the <a class="link4" href="termsofservice">Terms of Service</a></p>
+            <br>
         <input style="margin-right: 550px" class="loginbutton floatleft" type="submit" name="submit" value="Submit">
         <p style="margin-top: 3px; margin-bottom:0;" class="lighttext floatleft"><a style="margin-left: 5px;" class="link4" href="index.html"> I already have an account</a> | <a class="link4" href="index.html">Sign In</a></p>
         </form>
