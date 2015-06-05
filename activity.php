@@ -1,4 +1,9 @@
-<?php session_start()?>
+<?php
+session_start();
+if(isset($_SESSION['firstname'])){}else{
+    header('Location: index.php?error=log');
+}
+?>
 <!DOCTYPE html>
 <html>
 <head lang="en">
@@ -11,7 +16,7 @@
 <div class="navbar">
     <a class="logo" href="index.html">Work</a>
     <a class="logo2" href="index.html">Werm</a>
-    <p class="navtext"><a class="link" href="logout.html">logout</a><a class="link2" href="friends.html">friends</a><a class="link2 current" href="activity.html">activity</a><a class="link2" href="profile.html">profile</a>|</p>
+    <p class="navtext"><a class="link" href="logout.php">logout</a><a class="link2" href="friends.html">friends</a><a class="link2 current" href="activity.html">activity</a><a class="link2" href="profile.html">profile</a>|</p>
 </div>
 <!-- End of Navbar -->
 <!-- THIS IS THE CONTAINER FOR EVERYTHING BELOW THE NAV-->

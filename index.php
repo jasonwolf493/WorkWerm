@@ -17,24 +17,23 @@
 <div class="activity">
     <div style="height: 242px" class="floatleft third">
         <h3 class="header">Returning User</h3>
-<?php
-$text =sha1("sometext");
-echo $text;
 
-?>
         <form action="connect.php" method="post" id="formID">
         <br>
             <?php
             if(isset($_GET['error'])){
                 $error = $_GET['error'];
                 if($error=="true"){
-                    echo "Invalid login credentials";
+                    echo "<p class='error'>Invalid login credentials</p>";
                 }
                 if($error=="veri"){
-                    echo "Account has not been validated, check email.";
+                    echo "<p class='error'>Account has not been validated, check email.</p>";
                 }
                 if($error=="code"){
-                    echo "Incorrect code";
+                    echo "<p class='error'>Incorrect code</p>";
+                }
+                if($error=="log"){
+                    echo "<p class='error'>Please login</p>";
                 }
             }
             ?>
@@ -70,17 +69,29 @@ echo $text;
             <div class="screenshot2"><img src="imgs/WorkWerm3.png"></div>
         </div>
     </div>
+
+</div>
+<div id="overlay">
+    <div>
+        <p>Please fill out the form.</p>
+        <a class="link4" href="#" onclick="overlay()">Close</a>
+    </div>
 </div>
 
 <script>
     var form = document.getElementById('formID'); // form has to have ID: <form id="formID">
-form.noValidate = true;
-form.addEventListener('submit', function(event) { // listen for form submitting
-    if (!event.target.checkValidity()) {
-        event.preventDefault(); // dismiss the default functionality
-        alert('Please, fill the form'); // error message
+    form.noValidate = true;
+    form.addEventListener('submit', function(event) { // listen for form submitting
+        if (!event.target.checkValidity()) {
+            event.preventDefault(); // dismiss the default functionality
+            overlay(); // error message
+        }
+    }, false);</script>
+<script>
+    function overlay() {
+        el = document.getElementById("overlay");
+        el.style.visibility = (el.style.visibility == "visible") ? "hidden" : "visible";
     }
-}, false);
 </script>
 </body>
 </html>

@@ -21,19 +21,19 @@
             if(isset($_GET['error'])){
                 //echo $_GET['error'];
                 if (strpos($_GET['error'], 'exists') !== false) {
-                    echo ' Email/username already exists. ';
+                    echo '<p class="error"> Email/username already exists. </p>';
                 }
                 //echo $_GET['error'];
                 if (strpos($_GET['error'], 'code') !== false) {
-                    echo ' Incorrect code was received. ';
+                    echo '<p class="error"> Incorrect code was received. </p>';
                 }
                 //echo $_GET['error'];
                 if (strpos($_GET['error'], 'email') !== false) {
-                    echo ' Emails do not match. ';
+                    echo '<p class="error"> Emails do not match. </p>';
                 }
                 //echo $_GET['error'];
                 if (strpos($_GET['error'], 'password') !== false) {
-                    echo ' Passwords do not match. ';
+                    echo '<p class="error"> Passwords do not match. </p>';
                 }
             };
             ?>
@@ -61,15 +61,27 @@
     </div>
 
 </div>
+<div id="overlay">
+    <div>
+        <p>Please fill out the form.</p>
+        <a class="link4" href="#" onclick="overlay()">Close</a>
+    </div>
+</div>
+
 <script>
     var form = document.getElementById('formID'); // form has to have ID: <form id="formID">
     form.noValidate = true;
     form.addEventListener('submit', function(event) { // listen for form submitting
         if (!event.target.checkValidity()) {
             event.preventDefault(); // dismiss the default functionality
-            alert('Please, fill the form'); // error message
+            overlay(); // error message
         }
-    }, false);
+    }, false);</script>
+<script>
+    function overlay() {
+        el = document.getElementById("overlay");
+        el.style.visibility = (el.style.visibility == "visible") ? "hidden" : "visible";
+    }
 </script>
 </body>
 </html>
