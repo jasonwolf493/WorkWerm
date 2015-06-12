@@ -1,3 +1,4 @@
+<?php include_once"navbar.php"?>
 <!DOCTYPE html>
 <html>
 <head lang="en">
@@ -6,13 +7,8 @@
     <title>WorkWerm | Activity</title>
 </head>
 <body>
-<!-- Begin Navbar -->
-<div class="navbar">
-    <a class="logo" href="index.html">Work</a>
-    <a class="logo2" href="index.html">Werm</a>
-    <p class="navtext"><a class="link" href="logout.html">logout</a><a class="link2" href="friends.html">friends</a><a class="link2" href="activity.html">activity</a><a class="link2 current" href="profile.html">profile</a>|</p>
-</div>
-<!-- End of Navbar -->
+<?php drawnav()?>
+
 <!-- THIS IS THE CONTAINER FOR EVERYTHING BELOW THE NAV-->
 <div class="activity">
     <!-- THIS HOLDS A COMPLETE POST TOGETHER -->

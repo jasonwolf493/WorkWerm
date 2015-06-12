@@ -1,4 +1,4 @@
-
+<?php include_once"navbar.php"?>
 <!DOCTYPE html>
 <html>
 <head lang="en">
@@ -7,15 +7,11 @@
     <title>WorkWerm</title>
 </head>
 <body>
-<!-- Begin Navbar -->
-<div class="navbar">
-    <a class="logo" href="index.html">Work</a>
-    <a class="logo2" href="index.html">Werm</a>
-    <p class="navtext">|<a class="link" href="register.html">Sign Up</a></p>
-</div>
+<?php drawnav()?>
+
 <!-- End of Navbar -->
 <div class="activity">
-    <div style="height: 242px" class="floatleft third">
+    <div style="height: 275px" class="floatleft third">
         <h3 class="header">Returning User</h3>
 
         <form action="connect.php" method="post" id="formID">
@@ -43,15 +39,15 @@
         <br>
         <input class="loginbutton" type="submit" name="submit" value="Submit">
         <br>
-        <p style="margin-top: 3px; margin-bottom:0;" class="lighttext floatleft"><a style="margin-left: 5px;" class="link4" href="register.html"> Forgot Username/Password</a> | <a class="link4" href="register.html">Sign Up</a></p>
+        <p style="margin-top: 3px; margin-bottom:0;" class="lighttext floatleft"><a style="margin-left: 5px;" class="link4" href="register.php"> Forgot Username/Password</a> | <a class="link4" href="register.php">Sign Up</a></p>
         </form></div>
-    <div style="height: 242px" class="floatleft third">
+    <div style="height: 275px" class="floatleft third">
         <h3 class="header">New User</h3>
         <p class="normaltext">If you are a new user and do not have an account yet you can follow the link below to the sign up page. The sign up is quick and simple, we promise.</p>
-        <a href="register.html" class="link3">Sign Up</a>
+        <a href="register.php" class="link3">Sign Up</a>
     </div>
 
-    <div style="height: 242px" class="floatleft third">
+    <div style="height: 275px" class="floatleft third">
         <h3 class="header">About WorkWerm</h3>
         <p class="normaltext">WorkWerm is a social network focused on students and professionals. WorkWerm is a place where people can share their work and get feedback. WorkWerm has been designed to be fun and productive.</p>
     </div>

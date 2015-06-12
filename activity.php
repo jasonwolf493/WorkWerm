@@ -1,4 +1,5 @@
 <?php
+include_once "navbar.php";
 session_start();
 if(isset($_SESSION['firstname'])){}else{
     header('Location: index.php?error=log');
@@ -12,11 +13,13 @@ if(isset($_SESSION['firstname'])){}else{
     <title>WorkWerm | Activity</title>
 </head>
 <body>
-<!-- Begin Navbar -->
+<?php drawnav();?>
+
+<!-- Begin Navbar --
 <div class="navbar">
-    <a class="logo" href="index.html">Work</a>
-    <a class="logo2" href="index.html">Werm</a>
-    <p class="navtext"><a class="link" href="logout.php">logout</a><a class="link2" href="friends.html">friends</a><a class="link2 current" href="activity.html">activity</a><a class="link2" href="profile.html">profile</a>|</p>
+    <a class="logo" href="">Work</a>
+    <a class="logo2" href="">Werm</a>
+    <p class="navtext"><a class="link" href="logout.php">logout</a><a class="link2" href="friends.php">friends</a><a class="link2 current" href="activity.html">activity</a><a class="link2" href="profile.html">profile</a>|</p>
 </div>
 <!-- End of Navbar -->
 <!-- THIS IS THE CONTAINER FOR EVERYTHING BELOW THE NAV-->

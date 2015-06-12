@@ -41,6 +41,7 @@
             $_SESSION["firstname"] = $row["fname"];
             $_SESSION["lastname"] = $row["lname"];
             $_SESSION["verified"] = $row["verified"];
+            $_SESSION["username"] = $row["username"];
         }
         if($_SESSION["verified"]==1){
             header('Location: activity.php');
