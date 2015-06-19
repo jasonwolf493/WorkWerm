@@ -7,7 +7,7 @@
     <title>WorkWerm</title>
 </head>
 <body>
-<?php drawnav()?>
+<?php drawnav("index")?>
 
 <!-- End of Navbar -->
 <div class="activity">

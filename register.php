@@ -7,7 +7,7 @@
     <title>WorkWerm</title>
 </head>
 <body>
-<?php drawnav()?>
+<?php drawnav("register")?>
 <!-- End of Navbar -->
 <div class="activity">
     <div class="floatleft full">
@@ -80,7 +80,8 @@
             event.preventDefault(); // dismiss the default functionality
             overlay(); // error message
         }
-    }, false);</script>
+    }, false);
+</script>
 <script>
     function overlay() {
         el = document.getElementById("overlay");

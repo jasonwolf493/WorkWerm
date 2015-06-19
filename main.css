@@ -68,6 +68,16 @@ p.navtext{
     font-size: 28pt;
     letter-spacing: 10px;
 }
+p.mobilenavtext{
+    line-height: 93px;
+    font-family: Helvetica, sans-serif;
+    color: #e1e1e1;
+    font-weight: lighter;
+    text-align: right;
+    font-size: 28pt;
+    letter-spacing: 10px;
+
+}
 a.link{
     padding-left: 5px;
     padding-right: 5px;
@@ -383,6 +393,26 @@ li{
     padding:15px;
     text-align:center;
 }
+#overlay2 {
+
+    background-color: grey;
+    visibility: hidden;
+    width:100%;
+    text-align:center;
+
+    overflow: scroll;
+    height: 50px
+}
+#overlay2 div {
+    width:300px;
+    margin: 100px auto;
+    background-color: #fff;
+    border:1px solid #000;
+    padding:15px;
+    text-align:center;
+
+
+}
 #term {
     background-color: grey;
     visibility: hidden;
@@ -402,4 +432,82 @@ li{
     border:1px solid #000;
     padding:15px;
     text-align:left;
+}
+/*
+--------------------------------------  S T A R T  M O B I L E  W O R K  -----------------------------------------------
+*/
+input.uploadbutton{
+    width: 165px;
+}
+
+.mobileButton{
+    visibility: hidden;
+    display: none;
+}
+p.mobilenavtext{
+    visibility: hidden;
+}
+div#overlay2{
+    visibility: hidden;
+    height: 0;
+}
+
+@media screen and (max-width: 1093px){
+
+    p.mobilenavtext{
+        text-align: left;
+        line-height: 30px;
+        padding-left: 15%;
+
+    }
+    p.navtext{
+        visibility: hidden;
+        height: 30px;
+    }
+
+    .mobileButton{
+        visibility: visible;
+        float: right;
+        display: block;
+    }
+    a.mobileButton.link{
+        line-height: 0.75;
+    }
+    a.link2{
+        line-height: 0;
+        padding-left: 0;
+        margin-right: 20px;
+    }
+    #overlay2{
+        background-color: #878787;
+    }
+    img.mobileButton{
+        margin-right: 40px;
+    }
+    div#overlay2{
+        height: 50px;
+    }
+
+}
+
+@media screen and (max-width: 785px) {
+
+    .navbar {
+        width: 100%;
+    }
+    img.mobileButton{
+        margin-right: 10px;
+    }
+}
+@media screen and (max-width: 610px) {
+    input.uploadbutton{
+        display: none;
+    }
+    div.post{
+        padding-bottom: 25px;
+    }
+    a.replytext{
+        margin-top: 0;
+    }
+
 }

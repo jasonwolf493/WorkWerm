@@ -3,7 +3,6 @@ include_once "navbar.php";
 if(isset($_SESSION['firstname'])){}else{
     header('Location: index.php?error=log');
 }
-echo "logged in as: ".$_SESSION['username']." Firstname: ".$_SESSION['firstname']." Lastname: ".$_SESSION['lastname'];
 
 ?>
 
@@ -16,7 +15,7 @@ echo "logged in as: ".$_SESSION['username']." Firstname: ".$_SESSION['firstname'
 </head>
 
 <body>
-<?php drawnav()?>
+<?php drawnav("friends")?>
 
 <!-- THIS IS THE CONTAINER FOR EVERYTHING BELOW THE NAV-->
 <div class="activity">
@@ -174,10 +173,13 @@ echo "logged in as: ".$_SESSION['username']." Firstname: ".$_SESSION['firstname'
                 if($row["rname"]==$_SESSION["firstname"]." ".$_SESSION["lastname"]){
                     $loginusername = $row['sender'];
                     $name = $row['sname'];
+                    $profilelink = $row['sender'];
                     $receiver = true;
                 }else{
                     $loginusername = $row['receiver'];
                     $name = $row['rname'];
+
+                    $profilelink = $row['receiver'];
                     $receiver = false;
                 }
                 //display the other user's name
@@ -195,7 +197,7 @@ echo "logged in as: ".$_SESSION['username']." Firstname: ".$_SESSION['firstname'
                     ';
                 //otherwise we'll show [view profile] and [remove]
                 }else{
-                    echo '<a class="link3" style="margin-top: 10px;" href="profile.php">View Profile</a><p style="display: inline" class="normaltext"> | </p><a class="link3" style="margin-top: 10px;" href="http://localhost:8888/WorkWerm/friends.php?remove='.$loginusername.'">Remove</a>
+                    echo '<a class="link3" style="margin-top: 10px;" href="profile.php?user='.$profilelink.'">View Profile</a><p style="display: inline" class="normaltext"> | </p><a class="link3" style="margin-top: 10px;" href="http://localhost:8888/WorkWerm/friends.php?remove='.$loginusername.'">Remove</a>
 
                         </div>
                     </div>';}
