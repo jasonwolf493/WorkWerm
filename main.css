@@ -132,7 +132,7 @@ a.logo2{
 --------------------------------------- B E G I N  A C T I V I T Y -----------------------------------------------------
 */
 div.activity{
-    height:110px;
+
     padding-left: 15%;
     padding-right:15%;
     padding-top: 30px;
@@ -186,6 +186,8 @@ h3.header, h3{
     color: #0087FF;
 }
 img.profileimg{
+    height: 110px;
+    width: 110px;
     float: left;
     margin-top: 25px;
     margin-right: 3px;
@@ -374,12 +376,11 @@ li{
     color: red;
 }
 #overlay {
-    opacity: 0.5;
-    background-color: grey;
+    background: rgba(54, 54, 54, 0.5);
     visibility: hidden;
     position: absolute;
-    left: 0px;
-    top: 0px;
+    left: 0;
+    top: 0;
     width:100%;
     height:100%;
     text-align:center;
@@ -417,8 +418,8 @@ li{
     background-color: grey;
     visibility: hidden;
     position: absolute;
-    left: 0px;
-    top: 0px;
+    left: 0;
+    top: 0;
     width:100%;
     height:100%;
     text-align:center;
@@ -436,6 +437,11 @@ li{
 /*
 --------------------------------------  S T A R T  M O B I L E  W O R K  -----------------------------------------------
 */
+
+div.friendcontainer.floatleft{
+    width: 100%;
+}
+
 input.uploadbutton{
     width: 165px;
 }
@@ -487,13 +493,13 @@ div#overlay2{
     div#overlay2{
         height: 50px;
     }
-
 }
 
 @media screen and (max-width: 785px) {
 
     .navbar {
         width: 100%;
+
     }
     img.mobileButton{
         margin-right: 10px;
@@ -509,5 +515,28 @@ div#overlay2{
     a.replytext{
         margin-top: 0;
     }
+    .navbar {
+        margin:0;
+        padding:0;
+
+    }
+
 
 }
+
+
+@media screen and (max-width: 764px) {
+
+    div.friends.third {
+        float: none;
+        width: 100%;
+        margin: 0;
+    }
+
+    div.floatright.third {
+        width: 100%;
+        margin: 0;
+        float: none;
+    }
+}
+

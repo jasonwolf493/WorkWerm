@@ -21,7 +21,7 @@ if(isset($_SESSION['firstname'])){}else{
 <div class="activity">
     <!-- THIS HOLDS A COMPLETE POST TOGETHER -->
     <form action="" method="get" id="formID">
-        <div style="margin-top: 0; margin-bottom: 100%" class="floatright third">
+        <div style="margin-top: 0; " class="floatright third">
             <input  class="search" placeholder="Search People:" name="search" type="text">
             <input class="loginbutton" value="Search"  type="submit">
         </div>
@@ -54,7 +54,7 @@ if(isset($_SESSION['firstname'])){}else{
         $error = 'none';
 
         //begin transmission
-        $sql = "SELECT username, fname, lname, id FROM users WHERE username LIKE  '$search' OR fname LIKE '$search' OR lname LIKE '$search'";
+        $sql = "SELECT username, fname, lname, id FROM users WHERE username LIKE  '$search' OR fname LIKE '$search%' OR lname LIKE '$search%'";
 
         //$sql = "SELECT username, fname, lname FROM users WHERE username = '$search' OR fname = '$search' OR lname = '$search'";
         $result = $conn->query($sql);
@@ -66,7 +66,28 @@ if(isset($_SESSION['firstname'])){}else{
                 if($row['username']==$_SESSION['username']){}else{
                     echo '
                     <div  style="margin: 0; width: 340px" class="friendcontainer floatleft">
-                        <img style="margin: 0" class="profileimg" src="img.png">
+                        <img style="margin: 0" class="profileimg" src="';
+                    $target_dir = "uploads/";
+                    $target_file = $target_dir . $row['username'];
+
+
+                    if (file_exists($target_file.".jpg")) {
+                        echo "$target_file".".jpg";
+                    }
+                    elseif (file_exists($target_file.".jpeg")) {
+                        echo "$target_file".".jpeg";
+                    }
+                    elseif (file_exists($target_file.".png")) {
+                        echo "$target_file".".png";
+                    }
+                    elseif (file_exists($target_file.".gif")) {
+                        echo "$target_file".".gif";
+                    }
+                    else{
+                        echo "img.png";
+                    }
+
+                    echo'">
                         <div style="margin-right:0;" class="friends third">
                             <h3 class="header">'.$row["fname"]." ".$row["lname"].'</h3>
                             <a class="link3" style="margin-top: 10px;" href="profile.php">View Profile</a><p style="display: inline" class="normaltext"> |</p>
@@ -167,7 +188,7 @@ if(isset($_SESSION['firstname'])){}else{
         if ($result->num_rows > 0) {
             //echo the header(my friends) and make a div
             echo "<h3 style='font-family: Helvetica, sans-serif; font-size: 30pt; font-weight: lighter; color: #0087FF; margin-bottom:25px;'>My Friends Actual</h3>";
-            echo "<div style='min-height: 230px; overflow: scroll; border-bottom: 2px solid #e1e1e1; margin-bottom: 5px'>";
+            echo "<div style='min-height: 230px; height:auto; display:block; margin-bottom: 5px'>";
             while ($row = $result->fetch_assoc()) {
                 //figure out if they are the sender or receiver and select correct name
                 if($row["rname"]==$_SESSION["firstname"]." ".$_SESSION["lastname"]){
@@ -184,11 +205,32 @@ if(isset($_SESSION['firstname'])){}else{
                 }
                 //display the other user's name
                 echo '
-                    <div  style="margin: 0; width: 340px" class="friendcontainer floatleft">
-                        <img style="margin: 0" class="profileimg" src="img.png">
-                        <div style="margin-right:0;" class="friends third">
-                            <h3 class="header">'.$name.'</h3>
-                             ';
+                    <div  style="margin: 0; width: 340px; position: relative;" class="friendcontainer floatleft">
+                    <img style="margin: 0" class="profileimg" src="';
+                    $target_dir = "uploads/";
+                    $target_file = $target_dir . $loginusername;
+
+
+                    if (file_exists($target_file.".jpg")) {
+                        echo "$target_file".".jpg";
+                    }
+                    elseif (file_exists($target_file.".jpeg")) {
+                        echo "$target_file".".jpeg";
+                    }
+                    elseif (file_exists($target_file.".png")) {
+                        echo "$target_file".".png";
+                    }
+                    elseif (file_exists($target_file.".gif")) {
+                        echo "$target_file".".gif";
+                    }
+                    else{
+                        echo "img.png";
+                    }
+
+                echo'">
+                    <div style="margin-right:0;" class="friends third">
+                    <h3 class="header">'.$name.'</h3>';
+
                 //if the current user is the receiver show them the confirm button for the request
                 if($receiver==true && $row['pending']==1){
                     echo '<a class="link3" href="http://localhost:8888/WorkWerm/friends.php?confirm='.$row["sender"].'">Confirm Request</a><p style="display: inline" class="normaltext"> | </p><a class="link3" style="margin-top: 10px;" href="http://localhost:8888/WorkWerm/friends.php?remove='.$loginusername.'">Remove</a>

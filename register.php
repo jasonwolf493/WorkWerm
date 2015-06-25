@@ -12,7 +12,7 @@
 <div class="activity">
     <div class="floatleft full">
         <h3 class="header">Register</h3>
-        <form action="createuser.php" method="post" id="formID">
+        <form action="createuser.php" method="post" id="formID" enctype="multipart/form-data">
             <?php
             if(isset($_GET['error'])){
                 //echo $_GET['error'];
@@ -40,6 +40,18 @@
                 if (strpos($_GET['error'], 'num') !== false) {
                     echo '<p class="error"> Password has no number. </p>';
                 }
+                if (strpos($_GET['error'], 'notimg') !== false) {
+                    echo '<p class="error"> Upload is not an image. </p>';
+                }
+                if (strpos($_GET['error'], 'imgtaken') !== false) {
+                    echo '<p class="error"> Image already exists. </p>';
+                }
+                if (strpos($_GET['error'], 'format') !== false) {
+                    echo '<p class="error"> Incorrect image format. </p>';
+                }
+                if (strpos($_GET['error'], 'imglarge') !== false) {
+                    echo '<p class="error"> Image too large. </p>';
+                }
             };
             ?>
             <br>
@@ -57,10 +69,14 @@
             <br>
             <input class="login floatright" placeholder="Last Name:" name="lastname" type="text" required="true">
             <br>
+            Select image to upload:
+            <input type="file" name="fileToUpload" id="fileToUpload" required="true">
+            <br>
             <input style="margin-left: 5px" class="floatleft" type="checkbox" required="true"><p style="margin-top: 3px; margin-bottom:0;" class="lighttext floatleft" >I have read and agree to the <a class="link4" href="termsofservice">Terms of Service</a></p>
             <br>
         <input style="margin-right: 550px" class="loginbutton floatleft" type="submit" name="submit" value="Submit">
         <p style="margin-top: 3px; margin-bottom:0;" class="lighttext floatleft"><a style="margin-left: 5px;" class="link4" href="index.php"> I already have an account</a> | <a class="link4" href="index.php">Sign In</a></p>
+
         </form>
     </div>
 
@@ -88,5 +104,9 @@
         el.style.visibility = (el.style.visibility == "visible") ? "hidden" : "visible";
     }
 </script>
+<?php
+
+
+?>
 </body>
 </html>

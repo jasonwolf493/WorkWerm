@@ -8,7 +8,7 @@ function drawnav($active){
         <div class="navbar">
             <a class="logo" href="'.$indexlink.'">Work</a>
             <a class="logo2" href="'.$indexlink.'">Werm</a>
-            <p class="navtext"><a class="link" href="logout.php">logout</a><a class="link2 '; if($active=="friends"){echo'current';} echo '" href="friends.php">friends</a><a class="link2 '; if($active=="activity"){echo'current';} echo '" href="activity.php">activity</a><a class="link2 '; if($active=="profile"){echo'current';} echo '" href="profile.php">profile</a>|</p>
+            <p class="navtext"><a class="link" href="logout.php">logout</a><a class="link2 '; if($active=="friends"){echo'current';} echo '" href="friends.php">friends</a><a class="link2 '; if($active=="activity"){echo'current';} echo '" href="activity.php">activity</a><a class="link2 '; if($active=="profile"){echo'current';} echo '" href="profile.php?user='.$_SESSION['username'].'">profile</a>|</p>
             <a class="mobileButton link" href="logout.php">logout</a>
             <img class="mobileButton" src="imgs/menubutton.png" onclick="overlay()">
         </div>
@@ -36,10 +36,7 @@ function drawnav($active){
 echo'
 
 <script>
-var width = window.innerWidth
-|| document.documentElement.clientWidth
-|| document.body.clientWidth;
-console.log(width);
+
     function overlay() {
         el = document.getElementById("overlay2");
         el2 = document.getElementById("mobilenav");
